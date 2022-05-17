@@ -11,12 +11,10 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    myrobot.cpp \
     myrobot.cpp
 
 HEADERS += \
     mainwindow.h \
-    myrobot.h \
     myrobot.h
 
 FORMS += \

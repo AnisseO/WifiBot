@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -22,6 +23,10 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
+    QPushButton *bt_connect;
+    QPushButton *bt_disconnect;
+    QPushButton *left_button;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -32,9 +37,22 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        bt_connect = new QPushButton(centralwidget);
+        bt_connect->setObjectName(QString::fromUtf8("bt_connect"));
+        bt_connect->setGeometry(QRect(100, 230, 151, 71));
+        bt_disconnect = new QPushButton(centralwidget);
+        bt_disconnect->setObjectName(QString::fromUtf8("bt_disconnect"));
+        bt_disconnect->setGeometry(QRect(350, 230, 181, 71));
+        left_button = new QPushButton(centralwidget);
+        left_button->setObjectName(QString::fromUtf8("left_button"));
+        left_button->setGeometry(QRect(110, 110, 131, 61));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(360, 110, 131, 61));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -48,6 +66,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        bt_connect->setText(QCoreApplication::translate("MainWindow", "Connexion", nullptr));
+        bt_disconnect->setText(QCoreApplication::translate("MainWindow", "Deconnexion", nullptr));
+        left_button->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
     } // retranslateUi
 
 };

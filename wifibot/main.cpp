@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "myrobot.h"
 
 #include <QApplication>
 
