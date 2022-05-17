@@ -67,3 +67,11 @@ void MyRobot::MyTimerSlot() {
     socket->write(DataToSend);
     Mutex.unlock();
 }
+
+void MyRobot::Avancer() {
+
+}
+
+void MyRobot::Reculer() {
+
+}

@@ -26,6 +26,8 @@ public slots:
     void bytesWritten(qint64 bytes);
     void readyRead();
     void MyTimerSlot();
+    void Avancer();
+    void Reculer();
 
 private:
     QTcpSocket *socket;

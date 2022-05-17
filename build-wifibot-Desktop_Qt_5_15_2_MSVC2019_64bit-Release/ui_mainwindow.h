@@ -25,8 +25,10 @@ public:
     QWidget *centralwidget;
     QPushButton *bt_connect;
     QPushButton *bt_disconnect;
-    QPushButton *left_button;
-    QPushButton *pushButton_2;
+    QPushButton *bt_left;
+    QPushButton *bt_right;
+    QPushButton *bt_haut;
+    QPushButton *bt_bas;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,16 +41,22 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         bt_connect = new QPushButton(centralwidget);
         bt_connect->setObjectName(QString::fromUtf8("bt_connect"));
-        bt_connect->setGeometry(QRect(100, 230, 151, 71));
+        bt_connect->setGeometry(QRect(130, 440, 151, 71));
         bt_disconnect = new QPushButton(centralwidget);
         bt_disconnect->setObjectName(QString::fromUtf8("bt_disconnect"));
-        bt_disconnect->setGeometry(QRect(350, 230, 181, 71));
-        left_button = new QPushButton(centralwidget);
-        left_button->setObjectName(QString::fromUtf8("left_button"));
-        left_button->setGeometry(QRect(110, 110, 131, 61));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(360, 110, 131, 61));
+        bt_disconnect->setGeometry(QRect(360, 440, 181, 71));
+        bt_left = new QPushButton(centralwidget);
+        bt_left->setObjectName(QString::fromUtf8("bt_left"));
+        bt_left->setGeometry(QRect(70, 150, 131, 61));
+        bt_right = new QPushButton(centralwidget);
+        bt_right->setObjectName(QString::fromUtf8("bt_right"));
+        bt_right->setGeometry(QRect(420, 150, 131, 61));
+        bt_haut = new QPushButton(centralwidget);
+        bt_haut->setObjectName(QString::fromUtf8("bt_haut"));
+        bt_haut->setGeometry(QRect(250, 50, 121, 71));
+        bt_bas = new QPushButton(centralwidget);
+        bt_bas->setObjectName(QString::fromUtf8("bt_bas"));
+        bt_bas->setGeometry(QRect(250, 140, 121, 71));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -68,8 +76,10 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         bt_connect->setText(QCoreApplication::translate("MainWindow", "Connexion", nullptr));
         bt_disconnect->setText(QCoreApplication::translate("MainWindow", "Deconnexion", nullptr));
-        left_button->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        bt_left->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
+        bt_right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        bt_haut->setText(QCoreApplication::translate("MainWindow", "HAUT", nullptr));
+        bt_bas->setText(QCoreApplication::translate("MainWindow", "BAS", nullptr));
     } // retranslateUi
 
 };

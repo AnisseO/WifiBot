@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[6];
-    char stringdata0[106];
+    char stringdata0[96];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,13 +36,13 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 21), // "on_bt_connect_clicked"
 QT_MOC_LITERAL(2, 33, 0), // ""
 QT_MOC_LITERAL(3, 34, 24), // "on_bt_disconnect_clicked"
-QT_MOC_LITERAL(4, 59, 22), // "on_left_button_pressed"
-QT_MOC_LITERAL(5, 82, 23) // "on_pushButton_2_pressed"
+QT_MOC_LITERAL(4, 59, 18), // "on_bt_haut_clicked"
+QT_MOC_LITERAL(5, 78, 17) // "on_bt_bas_clicked"
 
     },
     "MainWindow\0on_bt_connect_clicked\0\0"
-    "on_bt_disconnect_clicked\0"
-    "on_left_button_pressed\0on_pushButton_2_pressed"
+    "on_bt_disconnect_clicked\0on_bt_haut_clicked\0"
+    "on_bt_bas_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -82,8 +82,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_bt_connect_clicked(); break;
         case 1: _t->on_bt_disconnect_clicked(); break;
-        case 2: _t->on_left_button_pressed(); break;
-        case 3: _t->on_pushButton_2_pressed(); break;
+        case 2: _t->on_bt_haut_clicked(); break;
+        case 3: _t->on_bt_bas_clicked(); break;
         default: ;
         }
     }

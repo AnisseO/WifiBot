@@ -28,15 +28,14 @@ void MainWindow::on_bt_disconnect_clicked()
     robot.disConnect();
 }
 
-
-void MainWindow::on_left_button_pressed()
+void MainWindow::on_bt_haut_clicked()
 {
-
+    robot.Avancer();
 }
 
 
-void MainWindow::on_pushButton_2_pressed()
+void MainWindow::on_bt_bas_clicked()
 {
-
+    robot.Reculer();
 }
 
