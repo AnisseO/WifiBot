@@ -86,26 +86,40 @@ void MyRobot::Avancer() {
 
 void MyRobot::Reculer() {
 
+    DataToSend[0] = 0xFF;
+    DataToSend[1] = 0x07;
+    DataToSend[2] = 0x78; // Vitesse gauche
+    DataToSend[3] = 0x0; // pas touche
+    DataToSend[4] = 0x78; // Vitesse droite
+    DataToSend[5] = 0x0; // pas touche
+    DataToSend[6] = 0x0; // Roues gauches et droites avancent
+
+    // Crc16(DataToSend,7); // Calcul CRC
+    short Crc = short Crc16 (DataToSend ,7);
+    DataToSend[7] = 0x0; // CRC
+    DataToSend[8] = 0x0; // CRC
+
+
 }
 
-short Crc16(unsigned char *Adresse_tab , unsigned char Taille_max)
+short Crc16(QByteArray Adresse_tab , unsigned char Taille_max)
 {
 unsigned int Crc = 0xFFFF;
 unsigned int Polynome = 0xA001;
 unsigned int CptOctet = 0;
 unsigned int CptBit = 0;
 unsigned int Parity= 0;
-Crc = 0xFFFF;
-Polynome = 0xA001;
-for ( CptOctet= 0 ; CptOctet < Taille_max ; CptOctet++)
-{
-Crc ^= *( Adresse_tab + CptOctet);
-for ( CptBit = 0; CptBit <= 7 ; CptBit++)
-{
-Parity= Crc;
-Crc >>= 1;
-if (Parity%2 == true) Crc ^= Polynome;
-}
-}
+ Crc = 0xFFFF;
+ Polynome = 0xA001;
+for ( CptOctet= 1 ; CptOctet < Taille_max ; CptOctet++)
+ {
+ Crc ^= Adresse_tab [CptOctet] ;
+ for ( CptBit = 0; CptBit <= 7 ; CptBit++)
+ {
+ Parity= Crc;
+ Crc >>= 1;
+ if (Parity%2 == true) Crc ^= Polynome;
+ }
+ }
 return(Crc);
 }
