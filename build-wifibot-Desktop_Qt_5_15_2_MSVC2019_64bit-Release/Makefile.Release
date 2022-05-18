@@ -288,6 +288,19 @@ release\moc_mainwindow.cpp: ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qtouchdevice.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qicon.h \
+		..\wifibot\myrobot.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QAbstractSocket \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QDebug \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QTimer \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qtimer.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qbasictimer.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMutex \
 		release\moc_predefs.h \
 		C:\Qt2\5.15.2\msvc2019_64\bin\moc.exe
 	C:\Qt2\5.15.2\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include "C:/Users/aniss/OneDrive - Université de Bourgogne/Documents/GitHub/WifiBot/build-wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Release/release/moc_predefs.h" -IC:/Qt2/5.15.2/msvc2019_64/mkspecs/win32-msvc -I"C:/Users/aniss/OneDrive - Université de Bourgogne/Documents/GitHub/WifiBot/wifibot" -IC:/Qt2/5.15.2/msvc2019_64/include -IC:/Qt2/5.15.2/msvc2019_64/include/QtWidgets -IC:/Qt2/5.15.2/msvc2019_64/include/QtGui -IC:/Qt2/5.15.2/msvc2019_64/include/QtANGLE -IC:/Qt2/5.15.2/msvc2019_64/include/QtNetwork -IC:/Qt2/5.15.2/msvc2019_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" ..\wifibot\mainwindow.h -o release\moc_mainwindow.cpp
@@ -503,6 +516,19 @@ release\main.obj: ..\wifibot\main.cpp ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qtouchdevice.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qicon.h \
+		..\wifibot\myrobot.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QAbstractSocket \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QDebug \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QTimer \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qtimer.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qbasictimer.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMutex \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QApplication \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qapplication.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qcoreapplication.h \
@@ -618,26 +644,20 @@ release\mainwindow.obj: ..\wifibot\mainwindow.cpp ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qtouchdevice.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qicon.h \
-		ui_mainwindow.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVariant \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QApplication \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qapplication.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qcoreapplication.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qeventloop.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qguiapplication.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qinputmethod.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QMenuBar \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qmenubar.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qmenu.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qaction.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QPushButton \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QStatusBar \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QWidget
+		..\wifibot\myrobot.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QAbstractSocket \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QDebug \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QTimer \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qtimer.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qbasictimer.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMutex \
+		ui_mainwindow.h
 
 release\myrobot.obj: ..\wifibot\myrobot.cpp ..\wifibot\myrobot.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
