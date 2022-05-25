@@ -75,7 +75,7 @@ void MyRobot::Avancer() {
         DataToSend[3] = 0x0; // pas touche
         DataToSend[4] = 0x78; // Vitesse droite
         DataToSend[5] = 0x0; // pas touche
-        DataToSend[6] = 0x50; // Roues gauches et droites avancent
+        DataToSend[6] = 0x50; // Roues gauche et droite avancent
 
         short Crc= Crc16(DataToSend, 7) ;
         DataToSend[7] = char(Crc); // CRC
@@ -99,6 +99,24 @@ void MyRobot::Reculer() {
 
 
 }
+
+void MyRobot::Droite(){
+    DataToSend[0] = 0xFF;
+    DataToSend[1] = 0x07;
+    DataToSend[2] = 0x78; // Vitesse gauche
+    DataToSend[3] = 0x0; // pas touche
+    DataToSend[4] = 0x78; // Vitesse droite
+    DataToSend[5] = 0x0; // pas touche
+    DataToSend[6] = 64; // Roues gauche avancent et roues droite reculent
+
+    short Crc= Crc16(DataToSend, 7) ;
+    DataToSend[7] = char(Crc); // CRC
+    DataToSend[8] = char(Crc>>8); // CRC
+
+}
+
+
+
  short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max)
 {
 unsigned int  Crc = 0xFFFF;

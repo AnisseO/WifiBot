@@ -23,6 +23,8 @@ private slots:
     void on_bt_haut_clicked();
     void on_bt_bas_clicked();
 
+    void on_bt_right_clicked();
+
 private:
     Ui::MainWindow *ui;
     MyRobot robot;
