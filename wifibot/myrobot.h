@@ -28,7 +28,7 @@ public slots:
     void MyTimerSlot();
     void Avancer();
     void Reculer();
-    short Crc16(unsigned char *Adresse_tab , unsigned char Taille_max);
+    short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max);
 
 private:
     QTcpSocket *socket;
