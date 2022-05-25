@@ -45,12 +45,14 @@ QT_MOC_LITERAL(9, 75, 11), // "MyTimerSlot"
 QT_MOC_LITERAL(10, 87, 7), // "Avancer"
 QT_MOC_LITERAL(11, 95, 7), // "Reculer"
 QT_MOC_LITERAL(12, 103, 6) // "Droite"
+QT_MOC_LITERAL(12, 103, 6) // "Gauche"
 
     },
     "MyRobot\0updateUI\0\0Data\0connected\0"
     "disconnected\0bytesWritten\0bytes\0"
     "readyRead\0MyTimerSlot\0Avancer\0Reculer\0"
     "Droite"
+    "Gauche"
 };
 #undef QT_MOC_LITERAL
 
@@ -111,6 +113,7 @@ void MyRobot::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 6: _t->Avancer(); break;
         case 7: _t->Reculer(); break;
         case 8: _t->Droite(); break;
+        case 8: _t->Gauche(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

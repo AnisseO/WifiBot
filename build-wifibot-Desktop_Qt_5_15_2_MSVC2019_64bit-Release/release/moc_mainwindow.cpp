@@ -44,6 +44,7 @@ QT_MOC_LITERAL(6, 96, 19) // "on_bt_right_clicked"
     "MainWindow\0on_bt_connect_clicked\0\0"
     "on_bt_disconnect_clicked\0on_bt_haut_clicked\0"
     "on_bt_bas_clicked\0on_bt_right_clicked"
+    "on_bt_bas_clicked\0on_bt_left_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -88,6 +89,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_bt_haut_clicked(); break;
         case 3: _t->on_bt_bas_clicked(); break;
         case 4: _t->on_bt_right_clicked(); break;
+        case 4: _t->on_bt_left_clicked(); break;
         default: ;
         }
     }

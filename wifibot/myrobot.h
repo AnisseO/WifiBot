@@ -29,7 +29,8 @@ public slots:
     void Avancer();
     void Reculer();
     void Droite();
-    short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max);
+    void Gauche();
+    short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:
     QTcpSocket *socket;
