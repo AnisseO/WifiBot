@@ -15,7 +15,6 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,8 +29,6 @@ public:
     QPushButton *bt_right;
     QPushButton *bt_haut;
     QPushButton *bt_bas;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,12 +57,6 @@ public:
         bt_bas = new QPushButton(centralwidget);
         bt_bas->setObjectName(QString::fromUtf8("bt_bas"));
         bt_bas->setGeometry(QRect(350, 150, 121, 71));
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(70, 280, 601, 80));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
