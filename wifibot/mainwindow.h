@@ -25,6 +25,10 @@ private slots:
 
     void on_bt_left_clicked();
 
+    void on_bt_right_clicked();
+
+    void on_stop_clicked();
+
 private:
     Ui::MainWindow *ui;
     MyRobot robot;

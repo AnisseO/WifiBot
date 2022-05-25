@@ -29,6 +29,7 @@ public:
     QPushButton *bt_right;
     QPushButton *bt_haut;
     QPushButton *bt_bas;
+    QPushButton *stop;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -57,6 +58,9 @@ public:
         bt_bas = new QPushButton(centralwidget);
         bt_bas->setObjectName(QString::fromUtf8("bt_bas"));
         bt_bas->setGeometry(QRect(350, 150, 121, 71));
+        stop = new QPushButton(centralwidget);
+        stop->setObjectName(QString::fromUtf8("stop"));
+        stop->setGeometry(QRect(260, 290, 291, 71));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -80,6 +84,7 @@ public:
         bt_right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
         bt_haut->setText(QCoreApplication::translate("MainWindow", "HAUT", nullptr));
         bt_bas->setText(QCoreApplication::translate("MainWindow", "BAS", nullptr));
+        stop->setText(QCoreApplication::translate("MainWindow", "STOP", nullptr));
     } // retranslateUi
 
 };

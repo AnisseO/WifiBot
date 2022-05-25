@@ -29,6 +29,8 @@ public slots:
     void Avancer();
     void Reculer();
     void Gauche();
+    void Droite();
+    void Stop();
     short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:

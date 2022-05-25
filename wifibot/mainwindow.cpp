@@ -42,3 +42,15 @@ void MainWindow::on_bt_left_clicked()
     robot.Gauche();
 }
 
+
+void MainWindow::on_bt_right_clicked()
+{
+    robot.Droite();
+}
+
+
+void MainWindow::on_stop_clicked()
+{
+    robot.Stop();
+}
+

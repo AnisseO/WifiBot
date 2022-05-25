@@ -75,7 +75,7 @@ void MyRobot::Avancer() {
         DataToSend[3] = 0x0; // pas touche
         DataToSend[4] = 0x78; // Vitesse droite
         DataToSend[5] = 0x0; // pas touche
-        DataToSend[6] = 0x50; // Roues gauches et droites avancent
+        DataToSend[6] = 0x50; // Roues gauche et droite avancent
 
         short Crc= Crc16(DataToSend, 7) ;
         DataToSend[7] = char(Crc); // CRC
@@ -90,9 +90,8 @@ void MyRobot::Reculer() {
     DataToSend[3] = 0x0; // pas touche
     DataToSend[4] = 0x78; // Vitesse droite
     DataToSend[5] = 0x0; // pas touche
-    DataToSend[6] = 0x0; // Roues gauches et droites reculent
+    DataToSend[6] = 0x0; // Roues gauche et droite reculent
 
-    //Crc16(DataToSend,7); // Calcul CRC
     short Crc= Crc16(DataToSend, 7) ;
     DataToSend[7] = char(Crc); // CRC
     DataToSend[8] = char(Crc>>8); // CRC
@@ -107,13 +106,28 @@ void MyRobot::Gauche() {
     DataToSend[3] = 0x0; // pas touche
     DataToSend[4] = 0x78; // Vitesse droite
     DataToSend[5] = 0x0; // pas touche
-    DataToSend[6] = 0x40; // Roues droites avancent
+    DataToSend[6] = 0x10; // Roues droite avancent roues gauche reculent
     short Crc= Crc16(DataToSend, 7) ;
     DataToSend[7] = char(Crc); // CRC
     DataToSend[8] = char(Crc>>8); // CRC
 
+}
+
+void MyRobot::Droite() {
+
+    DataToSend[0] = 0xFF;
+    DataToSend[1] = 0x07;
+    DataToSend[2] = 0x78; // Vitesse gauche
+    DataToSend[3] = 0x0; // pas touche
+    DataToSend[4] = 0x78; // Vitesse droite
+    DataToSend[5] = 0x0; // pas touche
+    DataToSend[6] = 0x40; // Roues droite reculent et roues gauche avancent
+    short Crc= Crc16(DataToSend, 7) ;
+    DataToSend[7] = char(Crc); // CRC
+    DataToSend[8] = char(Crc>>8); // CRC
 
 }
+
  short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max)
 {
 unsigned int  Crc = 0xFFFF;
@@ -135,4 +149,19 @@ for ( CptOctet= 1 ; CptOctet < Taille_max ; CptOctet++)
  }
 return(Crc);
 }
+
+
+ void MyRobot::Stop(){
+
+     DataToSend[0] = 0xFF;
+     DataToSend[1] = 0x07;
+     DataToSend[2] = 0x0; // Vitesse gauche
+     DataToSend[3] = 0x0; // pas touche
+     DataToSend[4] = 0x0; // Vitesse droite
+     DataToSend[5] = 0x0; // pas touche
+     DataToSend[6] = 0x50; // Roues droite et roues gauche
+     short Crc= Crc16(DataToSend, 7) ;
+     DataToSend[7] = char(Crc); // CRC
+     DataToSend[8] = char(Crc>>8); // CRC
+ }
 
