@@ -38,15 +38,15 @@ QT_MOC_LITERAL(2, 33, 0), // ""
 QT_MOC_LITERAL(3, 34, 24), // "on_bt_disconnect_clicked"
 QT_MOC_LITERAL(4, 59, 18), // "on_bt_haut_clicked"
 QT_MOC_LITERAL(5, 78, 17), // "on_bt_bas_clicked"
-QT_MOC_LITERAL(6, 96, 18), // "on_bt_left_clicked"
-QT_MOC_LITERAL(7, 115, 19), // "on_bt_right_clicked"
+QT_MOC_LITERAL(6, 96, 19), // "on_bt_right_clicked"
+QT_MOC_LITERAL(7, 116, 18), // "on_bt_left_clicked"
 QT_MOC_LITERAL(8, 135, 15) // "on_stop_clicked"
 
     },
     "MainWindow\0on_bt_connect_clicked\0\0"
     "on_bt_disconnect_clicked\0on_bt_haut_clicked\0"
-    "on_bt_bas_clicked\0on_bt_left_clicked\0"
-    "on_bt_right_clicked\0on_stop_clicked"
+    "on_bt_bas_clicked\0on_bt_right_clicked\0"
+    "on_bt_left_clicked\0on_stop_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -94,8 +94,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_bt_disconnect_clicked(); break;
         case 2: _t->on_bt_haut_clicked(); break;
         case 3: _t->on_bt_bas_clicked(); break;
-        case 4: _t->on_bt_left_clicked(); break;
-        case 5: _t->on_bt_right_clicked(); break;
+        case 4: _t->on_bt_right_clicked(); break;
+        case 5: _t->on_bt_left_clicked(); break;
         case 6: _t->on_stop_clicked(); break;
         default: ;
         }

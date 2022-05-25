@@ -37,6 +37,10 @@ void MainWindow::on_bt_bas_clicked()
 }
 
 
+void MainWindow::on_bt_right_clicked()
+{
+    robot.Droite();
+}
 void MainWindow::on_bt_left_clicked()
 {
     robot.Gauche();

@@ -28,6 +28,7 @@ public slots:
     void MyTimerSlot();
     void Avancer();
     void Reculer();
+    void Droite();
     void Gauche();
     void Droite();
     void Stop();
