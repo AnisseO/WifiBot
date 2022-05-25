@@ -94,17 +94,16 @@ void MyRobot::Reculer() {
     DataToSend[5] = 0x0; // pas touche
     DataToSend[6] = 0x0; // Roues gauches et droites avancent
 
-    // Crc16(DataToSend,7); // Calcul CRC
-    short Crc = short Crc16 (DataToSend ,7);
-    DataToSend[7] = 0x0; // CRC
-    DataToSend[8] = 0x0; // CRC
+    //Crc16(DataToSend,7); // Calcul CRC
+    short Crc= Crc16(DataToSend, 7) ;
+    DataToSend[7] = char(Crc); // CRC
+    DataToSend[8] = char(Crc>>8); // CRC
 
 
 }
-
-short Crc16(QByteArray Adresse_tab , unsigned char Taille_max)
+ short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max)
 {
-unsigned int Crc = 0xFFFF;
+unsigned int  Crc = 0xFFFF;
 unsigned int Polynome = 0xA001;
 unsigned int CptOctet = 0;
 unsigned int CptBit = 0;
@@ -123,3 +122,4 @@ for ( CptOctet= 1 ; CptOctet < Taille_max ; CptOctet++)
  }
 return(Crc);
 }
+
