@@ -39,3 +39,9 @@ void MainWindow::on_bt_bas_clicked()
     robot.Reculer();
 }
 
+
+void MainWindow::on_bt_left_clicked()
+{
+    robot.Gauche();
+}
+

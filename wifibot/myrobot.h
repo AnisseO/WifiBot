@@ -28,6 +28,7 @@ public slots:
     void MyTimerSlot();
     void Avancer();
     void Reculer();
+    void Gauche();
     short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:
