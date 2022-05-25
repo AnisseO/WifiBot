@@ -69,19 +69,17 @@ void MyRobot::MyTimerSlot() {
 }
 
 void MyRobot::Avancer() {
-    DataToSend[0] = 0xFF;
-    DataToSend[1] = 0x07;
-    DataToSend[2] = 0xF0; // Vitesse gauche
-    DataToSend[3] = 0x0; // pas touche
-    DataToSend[4] = 0xF0; // Vitesse droite
-    DataToSend[5] = 0x0; // pas touche
-    DataToSend[6] = 0x50; // Roues gauches et droites avancent
+        DataToSend[0] = 0xFF;
+        DataToSend[1] = 0x07;
+        DataToSend[2] = 0x78; // Vitesse gauche
+        DataToSend[3] = 0x0; // pas touche
+        DataToSend[4] = 0x78; // Vitesse droite
+        DataToSend[5] = 0x0; // pas touche
+        DataToSend[6] = 0x50; // Roues gauches et droites avancent
 
-    // Crc16(DataToSend,7); // Calcul CRC
-
-    DataToSend[7] = 0x0; // CRC
-    DataToSend[8] = 0x0; // CRC
-
+        short Crc= Crc16(DataToSend, 7) ;
+        DataToSend[7] = char(Crc); // CRC
+        DataToSend[8] = char(Crc>>8); // CRC
 }
 
 void MyRobot::Reculer() {
