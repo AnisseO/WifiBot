@@ -168,9 +168,6 @@ return(Crc);
 
  int MyRobot::getBatterie()
  {
-     int batterie;
-     batterie=DataReceived[2];
-     qDebug()<<"batterie : ";
-     qDebug()<<batterie;
+     int batterie = DataReceived[2];
      return batterie;
  }

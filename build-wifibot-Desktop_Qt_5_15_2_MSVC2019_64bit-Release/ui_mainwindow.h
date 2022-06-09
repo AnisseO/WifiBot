@@ -17,6 +17,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "QWebEngineView"
 
 QT_BEGIN_NAMESPACE
 
@@ -32,6 +33,7 @@ public:
     QPushButton *bt_bas;
     QPushButton *stop;
     QProgressBar *Batterie;
+    QWebEngineView *QCAM;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,7 +41,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1290, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         bt_connect = new QPushButton(centralwidget);
@@ -65,12 +67,15 @@ public:
         stop->setGeometry(QRect(260, 290, 291, 71));
         Batterie = new QProgressBar(centralwidget);
         Batterie->setObjectName(QString::fromUtf8("Batterie"));
-        Batterie->setGeometry(QRect(660, 20, 118, 23));
+        Batterie->setGeometry(QRect(530, 10, 118, 23));
         Batterie->setValue(24);
+        QCAM = new QWebEngineView(centralwidget);
+        QCAM->setObjectName(QString::fromUtf8("QCAM"));
+        QCAM->setGeometry(QRect(790, 90, 451, 271));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 1290, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

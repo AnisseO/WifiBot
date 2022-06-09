@@ -250,11 +250,11 @@ Makefile: ..\wifibot\wifibot.pro C:\Qt2\5.15.2\msvc2019_64\mkspecs\win32-msvc\qm
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resolve_config.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exclusive_builds_post.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\default_post.prf \
+		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources_functions.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qtquickcompiler.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\precompile_header.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\warn_on.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt.prf \
-		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources_functions.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\moc.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\opengl.prf \
@@ -267,15 +267,31 @@ Makefile: ..\wifibot\wifibot.pro C:\Qt2\5.15.2\msvc2019_64\mkspecs\win32-msvc\qm
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\yacc.prf \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\lex.prf \
 		..\wifibot\wifibot.pro \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgets.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCore.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quick.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupport.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgets.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Gui.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModels.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChannel.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qml.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Network.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioning.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.prl \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\build_pass.prf \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgetsd.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCored.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quickd.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupportd.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgetsd.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Guid.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModelsd.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChanneld.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qmld.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Networkd.prl \
+		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioningd.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Cored.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\wifibot\wifibot.pro -spec win32-msvc "CONFIG+=qtquickcompiler"
@@ -445,11 +461,11 @@ C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\default_pre.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resolve_config.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exclusive_builds_post.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\default_post.prf:
+C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources_functions.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qtquickcompiler.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\precompile_header.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\warn_on.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt.prf:
-C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources_functions.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\moc.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\opengl.prf:
@@ -462,15 +478,31 @@ C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exceptions.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\yacc.prf:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\lex.prf:
 ..\wifibot\wifibot.pro:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgets.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCore.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quick.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupport.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgets.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Gui.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModels.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChannel.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qml.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Network.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioning.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.prl:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\build_pass.prf:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgetsd.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCored.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quickd.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupportd.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgetsd.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Guid.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModelsd.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChanneld.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qmld.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Networkd.prl:
+C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioningd.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Cored.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\qtmaind.prl:
 qmake: FORCE

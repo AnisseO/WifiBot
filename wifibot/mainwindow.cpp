@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QWebEngineView *page = ui->QCAM;
+    page->load(QUrl("http://192.168.1.106:8080/?action=stream"));
 }
 
 MainWindow::~MainWindow()
