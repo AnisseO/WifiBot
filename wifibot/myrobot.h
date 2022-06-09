@@ -18,6 +18,8 @@ public:
     QByteArray DataReceived;
     QMutex Mutex;
 
+    int _vitesse;
+
 signals:
     void updateUI(const QByteArray Data);
 public slots:
@@ -32,6 +34,7 @@ public slots:
     void Droite();
     void Stop();
     int getBatterie();
+    void setVitesse(int vitesse);
     short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:

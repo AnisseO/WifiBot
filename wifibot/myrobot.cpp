@@ -16,6 +16,8 @@ MyRobot::MyRobot(QObject *parent) : QObject(parent) {
     TimerEnvoi = new QTimer();
     // setup signal and slot
     connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); //Send data to wifibot timer
+
+    _vitesse = 150;
 }
 
 
@@ -71,9 +73,9 @@ void MyRobot::MyTimerSlot() {
 void MyRobot::Avancer() {
         DataToSend[0] = 0xFF;
         DataToSend[1] = 0x07;
-        DataToSend[2] = 0x78; // Vitesse gauche
+        DataToSend[2] = _vitesse; // Vitesse gauche
         DataToSend[3] = 0x0; // pas touche
-        DataToSend[4] = 0x78; // Vitesse droite
+        DataToSend[4] = _vitesse; // Vitesse droite
         DataToSend[5] = 0x0; // pas touche
         DataToSend[6] = 0x50; // Roues gauche et droite avancent
 
@@ -86,9 +88,9 @@ void MyRobot::Reculer() {
 
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
-    DataToSend[2] = 0x78; // Vitesse gauche
+    DataToSend[2] = _vitesse; // Vitesse gauche
     DataToSend[3] = 0x0; // pas touche
-    DataToSend[4] = 0x78; // Vitesse droite
+    DataToSend[4] = _vitesse; // Vitesse droite
     DataToSend[5] = 0x0; // pas touche
     DataToSend[6] = 0x0; // Roues gauche et droite reculent
 
@@ -103,9 +105,9 @@ void MyRobot::Gauche() {
 
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
-    DataToSend[2] = 0x78; // Vitesse gauche
+    DataToSend[2] = _vitesse; // Vitesse gauche
     DataToSend[3] = 0x0; // pas touche
-    DataToSend[4] = 0x78; // Vitesse droite
+    DataToSend[4] = _vitesse; // Vitesse droite
     DataToSend[5] = 0x0; // pas touche
     DataToSend[6] = 0x10; // Roues droite avancent roues gauche reculent
     short Crc= Crc16(DataToSend, 7) ;
@@ -118,9 +120,9 @@ void MyRobot::Droite() {
 
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
-    DataToSend[2] = 0x78; // Vitesse gauche
+    DataToSend[2] = _vitesse; // Vitesse gauche
     DataToSend[3] = 0x0; // pas touche
-    DataToSend[4] = 0x78; // Vitesse droite
+    DataToSend[4] = _vitesse; // Vitesse droite
     DataToSend[5] = 0x0; // pas touche
     DataToSend[6] = 0x40; // Roues droite reculent et roues gauche avancent
     short Crc= Crc16(DataToSend, 7) ;
@@ -168,6 +170,13 @@ return(Crc);
 
  int MyRobot::getBatterie()
  {
+     readyRead();
      int batterie = DataReceived[2];
      return batterie;
  }
+
+ void MyRobot::setVitesse(int vitesse){
+     _vitesse = vitesse*2.4;
+ }
+
+

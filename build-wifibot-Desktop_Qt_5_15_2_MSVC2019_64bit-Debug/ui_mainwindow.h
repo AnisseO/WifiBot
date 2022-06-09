@@ -13,10 +13,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "QWebEngineView"
 
 QT_BEGIN_NAMESPACE
 
@@ -30,8 +31,9 @@ public:
     QPushButton *bt_right;
     QPushButton *bt_haut;
     QPushButton *bt_bas;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
+    QPushButton *stop;
+    QProgressBar *Batterie;
+    QWebEngineView *QCAM;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,7 +41,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1290, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         bt_connect = new QPushButton(centralwidget);
@@ -60,16 +62,20 @@ public:
         bt_bas = new QPushButton(centralwidget);
         bt_bas->setObjectName(QString::fromUtf8("bt_bas"));
         bt_bas->setGeometry(QRect(350, 150, 121, 71));
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(70, 280, 601, 80));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        stop = new QPushButton(centralwidget);
+        stop->setObjectName(QString::fromUtf8("stop"));
+        stop->setGeometry(QRect(260, 290, 291, 71));
+        Batterie = new QProgressBar(centralwidget);
+        Batterie->setObjectName(QString::fromUtf8("Batterie"));
+        Batterie->setGeometry(QRect(530, 10, 118, 23));
+        Batterie->setValue(24);
+        QCAM = new QWebEngineView(centralwidget);
+        QCAM->setObjectName(QString::fromUtf8("QCAM"));
+        QCAM->setGeometry(QRect(790, 90, 451, 271));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 1290, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -89,6 +95,7 @@ public:
         bt_right->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
         bt_haut->setText(QCoreApplication::translate("MainWindow", "HAUT", nullptr));
         bt_bas->setText(QCoreApplication::translate("MainWindow", "BAS", nullptr));
+        stop->setText(QCoreApplication::translate("MainWindow", "STOP", nullptr));
     } // retranslateUi
 
 };

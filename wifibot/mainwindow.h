@@ -3,6 +3,8 @@
 
 #include <QKeyEvent>
 #include <QMainWindow>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
 #include "myrobot.h"
 
 QT_BEGIN_NAMESPACE
@@ -31,10 +33,23 @@ private slots:
     void on_stop_clicked();
 
     void on_Batterie_valueChanged(int value);
+    //void updateBatteryLevel();
+
+    void on_horizontalSlider_sliderMoved(int position);
+
+    void on_bt_haut_cam_clicked();
+
+    void on_bt_bas_cam_clicked();
+
+    void on_bt_gauche_cam_clicked();
+
+    void on_bt_droite_cam_clicked();
 
 private:
     Ui::MainWindow *ui;
     MyRobot robot;
+    QNetworkAccessManager *manager;
+    QNetworkRequest request;
 
 };
 #endif // MAINWINDOW_H
