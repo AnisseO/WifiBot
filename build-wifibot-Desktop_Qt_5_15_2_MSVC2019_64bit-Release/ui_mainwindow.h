@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -30,6 +31,7 @@ public:
     QPushButton *bt_haut;
     QPushButton *bt_bas;
     QPushButton *stop;
+    QProgressBar *Batterie;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,6 +63,10 @@ public:
         stop = new QPushButton(centralwidget);
         stop->setObjectName(QString::fromUtf8("stop"));
         stop->setGeometry(QRect(260, 290, 291, 71));
+        Batterie = new QProgressBar(centralwidget);
+        Batterie->setObjectName(QString::fromUtf8("Batterie"));
+        Batterie->setGeometry(QRect(660, 20, 118, 23));
+        Batterie->setValue(24);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

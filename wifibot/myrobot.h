@@ -28,10 +28,10 @@ public slots:
     void MyTimerSlot();
     void Avancer();
     void Reculer();
-    void Droite();
     void Gauche();
     void Droite();
     void Stop();
+    int getBatterie();
     short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:

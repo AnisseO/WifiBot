@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QKeyEvent>
 #include <QMainWindow>
 #include "myrobot.h"
 
@@ -15,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void keyPressEvent(QKeyEvent *z);
 
 private slots:
     void on_bt_connect_clicked();
@@ -26,9 +28,9 @@ private slots:
     void on_bt_right_clicked();
     void on_bt_left_clicked();
 
-    void on_bt_right_clicked();
-
     void on_stop_clicked();
+
+    void on_Batterie_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
