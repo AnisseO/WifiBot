@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MyRobot_t {
-    QByteArrayData data[16];
-    char stringdata0[134];
+    QByteArrayData data[18];
+    char stringdata0[153];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,13 +47,16 @@ QT_MOC_LITERAL(11, 95, 7), // "Reculer"
 QT_MOC_LITERAL(12, 103, 6), // "Gauche"
 QT_MOC_LITERAL(13, 110, 6), // "Droite"
 QT_MOC_LITERAL(14, 117, 4), // "Stop"
-QT_MOC_LITERAL(15, 122, 11) // "getBatterie"
+QT_MOC_LITERAL(15, 122, 11), // "getBatterie"
+QT_MOC_LITERAL(16, 134, 10), // "setVitesse"
+QT_MOC_LITERAL(17, 145, 7) // "vitesse"
 
     },
     "MyRobot\0updateUI\0\0Data\0connected\0"
     "disconnected\0bytesWritten\0bytes\0"
     "readyRead\0MyTimerSlot\0Avancer\0Reculer\0"
-    "Gauche\0Droite\0Stop\0getBatterie"
+    "Gauche\0Droite\0Stop\0getBatterie\0"
+    "setVitesse\0vitesse"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +66,7 @@ static const uint qt_meta_data_MyRobot[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,20 +74,21 @@ static const uint qt_meta_data_MyRobot[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   74,    2, 0x06 /* Public */,
+       1,    1,   79,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   77,    2, 0x0a /* Public */,
-       5,    0,   78,    2, 0x0a /* Public */,
-       6,    1,   79,    2, 0x0a /* Public */,
-       8,    0,   82,    2, 0x0a /* Public */,
-       9,    0,   83,    2, 0x0a /* Public */,
-      10,    0,   84,    2, 0x0a /* Public */,
-      11,    0,   85,    2, 0x0a /* Public */,
-      12,    0,   86,    2, 0x0a /* Public */,
-      13,    0,   87,    2, 0x0a /* Public */,
-      14,    0,   88,    2, 0x0a /* Public */,
-      15,    0,   89,    2, 0x0a /* Public */,
+       4,    0,   82,    2, 0x0a /* Public */,
+       5,    0,   83,    2, 0x0a /* Public */,
+       6,    1,   84,    2, 0x0a /* Public */,
+       8,    0,   87,    2, 0x0a /* Public */,
+       9,    0,   88,    2, 0x0a /* Public */,
+      10,    0,   89,    2, 0x0a /* Public */,
+      11,    0,   90,    2, 0x0a /* Public */,
+      12,    0,   91,    2, 0x0a /* Public */,
+      13,    0,   92,    2, 0x0a /* Public */,
+      14,    0,   93,    2, 0x0a /* Public */,
+      15,    0,   94,    2, 0x0a /* Public */,
+      16,    1,   95,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QByteArray,    3,
@@ -101,6 +105,7 @@ static const uint qt_meta_data_MyRobot[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Int,
+    QMetaType::Void, QMetaType::Int,   17,
 
        0        // eod
 };
@@ -124,6 +129,7 @@ void MyRobot::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 10: _t->Stop(); break;
         case 11: { int _r = _t->getBatterie();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        case 12: _t->setVitesse((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -167,13 +173,13 @@ int MyRobot::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 13)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 13;
     }
     return _id;
 }

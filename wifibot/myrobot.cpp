@@ -98,7 +98,6 @@ void MyRobot::Reculer() {
     DataToSend[7] = char(Crc); // CRC
     DataToSend[8] = char(Crc>>8); // CRC
 
-
 }
 
 void MyRobot::Gauche() {
@@ -171,12 +170,12 @@ return(Crc);
  int MyRobot::getBatterie()
  {
      readyRead();
-     int batterie = DataReceived[2];
+     unsigned int batterie = DataReceived[2];
      return batterie;
  }
 
  void MyRobot::setVitesse(int vitesse){
-     _vitesse = vitesse*2.4;
+     _vitesse = vitesse;
+     qDebug() << "Vitesse choisie : " << _vitesse;
  }
-
 

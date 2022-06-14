@@ -17,11 +17,11 @@ public:
     QByteArray DataToSend;
     QByteArray DataReceived;
     QMutex Mutex;
-
-    int _vitesse;
+    unsigned int _vitesse;
 
 signals:
     void updateUI(const QByteArray Data);
+
 public slots:
     void connected();
     void disconnected();

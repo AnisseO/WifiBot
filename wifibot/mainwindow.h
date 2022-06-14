@@ -20,6 +20,7 @@ public:
     ~MainWindow();
     void keyPressEvent(QKeyEvent *z);
 
+
 private slots:
     void on_bt_connect_clicked();
     void on_bt_disconnect_clicked();
@@ -33,8 +34,6 @@ private slots:
     void on_stop_clicked();
 
     void on_Batterie_valueChanged(int value);
-    //void updateBatteryLevel();
-
     void on_horizontalSlider_sliderMoved(int position);
 
     void on_bt_haut_cam_clicked();

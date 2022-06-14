@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>button-stop.webp</file>
+        <file>stop.png</file>
+        <file>fond.jpg</file>
+        <file>haut.png</file>
+        <file>droite.png</file>
+        <file>gauche.png</file>
+        <file>bas.png</file>
+    </qresource>
+</RCC>

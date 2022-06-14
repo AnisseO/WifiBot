@@ -281,6 +281,7 @@ Makefile: ..\wifibot\wifibot.pro C:\Qt2\5.15.2\msvc2019_64\mkspecs\win32-msvc\qm
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.prl \
 		C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\build_pass.prf \
+		..\wifibot\rsrc.qrc \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgetsd.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCored.prl \
 		C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quickd.prl \
@@ -492,6 +493,7 @@ C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioning.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.prl:
 C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\build_pass.prf:
+..\wifibot\rsrc.qrc:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgetsd.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCored.prl:
 C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quickd.prl:

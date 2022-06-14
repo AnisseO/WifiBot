@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/bt">
+        <file>img/button-stop.webp</file>
+    </qresource>
+</RCC>
