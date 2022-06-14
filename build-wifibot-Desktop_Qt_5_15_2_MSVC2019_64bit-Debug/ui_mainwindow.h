@@ -52,17 +52,28 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         bt_connect = new QPushButton(centralwidget);
         bt_connect->setObjectName(QString::fromUtf8("bt_connect"));
-        bt_connect->setGeometry(QRect(190, 620, 171, 71));
+        bt_connect->setGeometry(QRect(120, 570, 261, 151));
         QFont font;
         font.setPointSize(11);
         bt_connect->setFont(font);
+        bt_connect->setStyleSheet(QString::fromUtf8("#bt_connect{\n"
+"background-color: transparent;\n"
+"border-image: url(:on.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+"\n"
+"#bt_connect:pressed{\n"
+"border-image: url(:off.png);\n"
+"}"));
         bt_disconnect = new QPushButton(centralwidget);
         bt_disconnect->setObjectName(QString::fromUtf8("bt_disconnect"));
         bt_disconnect->setGeometry(QRect(440, 620, 181, 71));
         bt_disconnect->setFont(font);
         bt_left = new QPushButton(centralwidget);
         bt_left->setObjectName(QString::fromUtf8("bt_left"));
-        bt_left->setGeometry(QRect(100, 190, 201, 121));
+        bt_left->setGeometry(QRect(100, 110, 201, 121));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(true);
@@ -76,7 +87,7 @@ public:
 "}"));
         bt_right = new QPushButton(centralwidget);
         bt_right->setObjectName(QString::fromUtf8("bt_right"));
-        bt_right->setGeometry(QRect(520, 190, 191, 121));
+        bt_right->setGeometry(QRect(510, 110, 191, 121));
         bt_right->setFont(font1);
         bt_right->setStyleSheet(QString::fromUtf8("#bt_right{\n"
 "background-color: transparent;\n"
@@ -87,7 +98,7 @@ public:
 "}"));
         bt_haut = new QPushButton(centralwidget);
         bt_haut->setObjectName(QString::fromUtf8("bt_haut"));
-        bt_haut->setGeometry(QRect(350, 10, 151, 161));
+        bt_haut->setGeometry(QRect(330, 10, 161, 161));
         QPalette palette;
         QBrush brush(QColor(245, 245, 245, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -162,7 +173,7 @@ public:
 "}"));
         bt_bas = new QPushButton(centralwidget);
         bt_bas->setObjectName(QString::fromUtf8("bt_bas"));
-        bt_bas->setGeometry(QRect(340, 170, 161, 151));
+        bt_bas->setGeometry(QRect(330, 180, 161, 151));
         bt_bas->setStyleSheet(QString::fromUtf8("#bt_bas{\n"
 "background-color: transparent;\n"
 "border-image: url(:bas.png);\n"
@@ -172,13 +183,17 @@ public:
 "}"));
         stop = new QPushButton(centralwidget);
         stop->setObjectName(QString::fromUtf8("stop"));
-        stop->setGeometry(QRect(310, 460, 181, 121));
+        stop->setGeometry(QRect(310, 430, 181, 121));
         stop->setStyleSheet(QString::fromUtf8("#stop{\n"
 "background-color: transparent;\n"
 "border-image: url(:stop.png);\n"
 "background: none;\n"
 "border: none;\n"
 "background-repeat: none;\n"
+"}\n"
+"\n"
+"#stop:pressed{\n"
+"border-image: url(:stop_press.png);\n"
 "}"));
         Batterie = new QProgressBar(centralwidget);
         Batterie->setObjectName(QString::fromUtf8("Batterie"));
@@ -196,26 +211,54 @@ public:
         horizontalSlider->setOrientation(Qt::Horizontal);
         bt_haut_cam = new QPushButton(centralwidget);
         bt_haut_cam->setObjectName(QString::fromUtf8("bt_haut_cam"));
-        bt_haut_cam->setGeometry(QRect(950, 480, 91, 71));
+        bt_haut_cam->setGeometry(QRect(940, 420, 141, 141));
         QFont font2;
         font2.setPointSize(26);
         bt_haut_cam->setFont(font2);
+        bt_haut_cam->setStyleSheet(QString::fromUtf8("#bt_haut_cam{\n"
+"background-color: transparent;\n"
+"border-image: url(:haut_bl.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         bt_bas_cam = new QPushButton(centralwidget);
         bt_bas_cam->setObjectName(QString::fromUtf8("bt_bas_cam"));
-        bt_bas_cam->setGeometry(QRect(950, 560, 91, 71));
+        bt_bas_cam->setGeometry(QRect(940, 570, 141, 111));
         QFont font3;
         font3.setPointSize(16);
         bt_bas_cam->setFont(font3);
+        bt_bas_cam->setStyleSheet(QString::fromUtf8("#bt_bas_cam{\n"
+"background-color: transparent;\n"
+"border-image: url(:bas_b.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         bt_droite_cam = new QPushButton(centralwidget);
         bt_droite_cam->setObjectName(QString::fromUtf8("bt_droite_cam"));
-        bt_droite_cam->setGeometry(QRect(1060, 560, 91, 71));
+        bt_droite_cam->setGeometry(QRect(1100, 500, 151, 111));
         QFont font4;
         font4.setPointSize(20);
         bt_droite_cam->setFont(font4);
+        bt_droite_cam->setStyleSheet(QString::fromUtf8("#bt_droite_cam{\n"
+"background-color: transparent;\n"
+"border-image: url(:droite_b.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         bt_gauche_cam = new QPushButton(centralwidget);
         bt_gauche_cam->setObjectName(QString::fromUtf8("bt_gauche_cam"));
-        bt_gauche_cam->setGeometry(QRect(840, 560, 91, 71));
+        bt_gauche_cam->setGeometry(QRect(770, 490, 151, 121));
         bt_gauche_cam->setFont(font4);
+        bt_gauche_cam->setStyleSheet(QString::fromUtf8("#bt_gauche_cam{\n"
+"background-color: transparent;\n"
+"border-image: url(:gauche_b.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -233,17 +276,17 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        bt_connect->setText(QCoreApplication::translate("MainWindow", "Connexion", nullptr));
+        bt_connect->setText(QString());
         bt_disconnect->setText(QCoreApplication::translate("MainWindow", "Deconnexion", nullptr));
         bt_left->setText(QString());
         bt_right->setText(QString());
         bt_haut->setText(QString());
         bt_bas->setText(QString());
         stop->setText(QString());
-        bt_haut_cam->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
-        bt_bas_cam->setText(QCoreApplication::translate("MainWindow", "BAS", nullptr));
-        bt_droite_cam->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
-        bt_gauche_cam->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
+        bt_haut_cam->setText(QString());
+        bt_bas_cam->setText(QString());
+        bt_droite_cam->setText(QString());
+        bt_gauche_cam->setText(QString());
     } // retranslateUi
 
 };

@@ -49,6 +49,7 @@ private:
     MyRobot robot;
     QNetworkAccessManager *manager;
     QNetworkRequest request;
+    int count=0;
 
 };
 #endif // MAINWINDOW_H

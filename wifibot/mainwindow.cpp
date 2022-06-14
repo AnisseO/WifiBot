@@ -24,7 +24,12 @@ MainWindow::~MainWindow()
 */
 void MainWindow::on_bt_connect_clicked()
 {
-    robot.doConnect();
+    count++;
+    if(count & 1){
+      robot.doConnect();
+    }
+    else
+      robot.disConnect();
 }
 
 

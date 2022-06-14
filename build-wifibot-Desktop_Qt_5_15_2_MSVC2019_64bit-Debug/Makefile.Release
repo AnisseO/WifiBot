@@ -179,11 +179,17 @@ release\qrc_rsrc.cpp: ..\wifibot\rsrc.qrc \
 		C:\Qt2\5.15.2\msvc2019_64\bin\rcc.exe \
 		..\wifibot\stop.png \
 		..\wifibot\haut.png \
-		..\wifibot\button-stop.webp \
+		..\wifibot\bas_b.png \
+		..\wifibot\droite_b.png \
+		..\wifibot\gauche_b.png \
+		..\wifibot\haut_bl.png \
+		..\wifibot\on.png \
 		..\wifibot\gauche.png \
+		..\wifibot\off.png \
 		..\wifibot\droite.png \
 		..\wifibot\fond.jpg \
-		..\wifibot\bas.png
+		..\wifibot\bas.png \
+		..\wifibot\stop_press.png
 	C:\Qt2\5.15.2\msvc2019_64\bin\rcc.exe -name rsrc ..\wifibot\rsrc.qrc -o release\qrc_rsrc.cpp
 
 compiler_moc_predefs_make_all: release\moc_predefs.h
