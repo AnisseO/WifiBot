@@ -172,8 +172,45 @@ return(Crc);
      return batterie;
  }
 
- void MyRobot::setVitesse(int vitesse){
+ void MyRobot::setVitesse(unsigned char vitesse){
      _vitesse = vitesse;
-     qDebug() << "Vitesse choisie : " << _vitesse;
+ }
+
+ int MyRobot::showvitesse(){
+     return _vitesse ;
+ }
+
+ int MyRobot::get_irAvD(){
+     unsigned char IR = DataReceived[11];
+     int ir=(int)IR;
+     return ir;
+ }
+
+ int MyRobot::get_irArG(){
+     unsigned char IR = DataReceived[12];
+     int ir =(int)IR;
+     return ir;
+ }
+
+ int MyRobot::get_irArD(){
+     unsigned char IR = DataReceived[4];
+     int ir=(int)IR;
+     return ir;
+ }
+
+ int MyRobot::get_irAvG(){
+     unsigned char IR = DataReceived[3];
+     int ir=(int)IR;
+     return ir;
+ }
+
+ void MyRobot::stopIR(){
+    int ir0= get_irAvG();
+    int ir1= get_irAvD();
+    int ir2= get_irArD();
+
+    if(ir0 && ir1 || ir2 < 100){
+        Stop();
+    }
  }
 

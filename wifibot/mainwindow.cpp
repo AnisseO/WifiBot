@@ -9,10 +9,21 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     QWebEngineView *page = ui->QCAM; //Création d'un stream sur l'app
     page->load(QUrl("http://192.168.1.106:8080/?action=stream")); //Récupération des images de la caméra du robot
     manager = new QNetworkAccessManager(); //Création d'un manager
+
+    TimerReceiveIR = new QTimer(this);
+    connect(TimerReceiveIR , &QTimer::timeout,this, &MainWindow::display_irAvD);//Connexion du timer avec le capteur IR avant droit
+    connect(TimerReceiveIR , &QTimer::timeout,this, &MainWindow::display_irAvG);//Connexion du timer avec le capteur IR avant gauche
+    connect(TimerReceiveIR , &QTimer::timeout,this, &MainWindow::display_irArD);//Connexion du timer avec le capteur IR arrière droit
+    connect(TimerReceiveIR , &QTimer::timeout,this, &MainWindow::display_irArG);//Connexion du timer avec le capteur IR arrière gauche
+    TimerReceiveIR->start(1000);
     connect(&robot, SIGNAL(updateUI(QByteArray)), this, SLOT(update())); //Récupération des signals envoyés par le robot
+
+    refresh = new QTimer(this);
+    refresh->setSingleShot(true);
 }
 
 //Destructeur
@@ -21,9 +32,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/*
- * BOUTONS
-*/
+///
+/// BOUTONS
+///
 void MainWindow::on_bt_connect_clicked() //Bt connect et disconnect
 {
     count++;//Compteur
@@ -129,6 +140,9 @@ void MainWindow::on_horizontalSlider_sliderMoved(int position)
     robot.setVitesse(position);//Position du slider(entre 0-240) sera la vitesse des roues
 }
 
+///
+/// CAMERA
+///
 /**
  * Déplacement caméra depuis le bouton sur l'interface vers le haut
  * @brief MainWindow::on_bt_haut_cam_clicked
@@ -169,7 +183,43 @@ void MainWindow::on_bt_droite_cam_clicked()
     manager->get(request);
 }
 
+
+///
+/// ECRANS LCD
+///
+//Affiche la vitesse
+void MainWindow::on_lcdNumber_overflow()
+{
+  //ui->value->display(robot.showvitesse());
+}
+
+//Affiche donnée infrarouge du capteur avant droit
+void MainWindow::display_irAvD(){
+    int ir =(int)robot.get_irAvD();
+    ui->irAvD->display(ir);
+}
+
+//Affiche donnée infrarouge du capteur avant gauche
+void MainWindow::display_irAvG(){
+    int ir =(int)robot.get_irAvG();
+    ui->irAvG->display(ir);
+}
+
+//Affiche donnée infrarouge du capteur arrière droit
+void MainWindow::display_irArD(){
+    int ir =(int)robot.get_irArD();
+    ui->irArD->display(ir);
+}
+
+//Affiche donnée infrarouge du capteur arrière gauche
+void MainWindow::display_irArG(){
+    int ir =(int)robot.get_irArG();
+    ui->irArG->display(ir);
+}
+
 //Méthode récupérant les données envoyées par le robot
 void MainWindow::update(){
-    batterie = DataReceived[2];
+    batLevel = robot.getBatterie();
+    robot.stopIR();
+    refresh->start(1000);
 }

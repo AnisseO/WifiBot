@@ -34,7 +34,13 @@ public slots:
     void Droite();
     void Stop();
     int getBatterie();
-    void setVitesse(int vitesse);
+    void setVitesse(unsigned char vitesse);
+    int showvitesse();
+    int get_irAvD();
+    int get_irArD();
+    int get_irAvG();
+    int get_irArG();
+    void stopIR();
     short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:

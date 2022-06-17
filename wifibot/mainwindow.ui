@@ -413,7 +413,7 @@ border-image: url(:stop_press.png);
     <property name="geometry">
      <rect>
       <x>780</x>
-      <y>120</y>
+      <y>170</y>
       <width>451</width>
       <height>271</height>
      </rect>
@@ -429,7 +429,7 @@ border-image: url(:stop_press.png);
      </rect>
     </property>
     <property name="minimum">
-     <number>0</number>
+     <number>120</number>
     </property>
     <property name="maximum">
      <number>240</number>
@@ -444,10 +444,10 @@ border-image: url(:stop_press.png);
    <widget class="QPushButton" name="bt_haut_cam">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>420</y>
+      <x>930</x>
+      <y>470</y>
       <width>141</width>
-      <height>141</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
@@ -471,10 +471,10 @@ background-repeat: none;
    <widget class="QPushButton" name="bt_bas_cam">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>570</y>
+      <x>930</x>
+      <y>600</y>
       <width>141</width>
-      <height>111</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -498,9 +498,9 @@ background-repeat: none;
    <widget class="QPushButton" name="bt_droite_cam">
     <property name="geometry">
      <rect>
-      <x>1100</x>
-      <y>500</y>
-      <width>151</width>
+      <x>1090</x>
+      <y>530</y>
+      <width>141</width>
       <height>111</height>
      </rect>
     </property>
@@ -526,8 +526,8 @@ background-repeat: none;
     <property name="geometry">
      <rect>
       <x>770</x>
-      <y>490</y>
-      <width>151</width>
+      <y>520</y>
+      <width>141</width>
       <height>121</height>
      </rect>
     </property>
@@ -547,6 +547,46 @@ background-repeat: none;
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="irAvG">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="irArG">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>80</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="irAvD">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="irArD">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>80</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
     </property>
    </widget>
   </widget>

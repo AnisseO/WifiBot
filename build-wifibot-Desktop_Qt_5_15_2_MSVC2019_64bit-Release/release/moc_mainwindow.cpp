@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[17];
-    char stringdata0[300];
+    QByteArrayData data[22];
+    char stringdata0[378];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,7 +48,12 @@ QT_MOC_LITERAL(12, 198, 22), // "on_bt_haut_cam_clicked"
 QT_MOC_LITERAL(13, 221, 21), // "on_bt_bas_cam_clicked"
 QT_MOC_LITERAL(14, 243, 24), // "on_bt_gauche_cam_clicked"
 QT_MOC_LITERAL(15, 268, 24), // "on_bt_droite_cam_clicked"
-QT_MOC_LITERAL(16, 293, 6) // "update"
+QT_MOC_LITERAL(16, 293, 21), // "on_lcdNumber_overflow"
+QT_MOC_LITERAL(17, 315, 13), // "display_irAvD"
+QT_MOC_LITERAL(18, 329, 13), // "display_irAvG"
+QT_MOC_LITERAL(19, 343, 13), // "display_irArD"
+QT_MOC_LITERAL(20, 357, 13), // "display_irArG"
+QT_MOC_LITERAL(21, 371, 6) // "update"
 
     },
     "MainWindow\0on_bt_connect_clicked\0\0"
@@ -58,7 +63,9 @@ QT_MOC_LITERAL(16, 293, 6) // "update"
     "value\0on_horizontalSlider_sliderMoved\0"
     "position\0on_bt_haut_cam_clicked\0"
     "on_bt_bas_cam_clicked\0on_bt_gauche_cam_clicked\0"
-    "on_bt_droite_cam_clicked\0update"
+    "on_bt_droite_cam_clicked\0on_lcdNumber_overflow\0"
+    "display_irAvD\0display_irAvG\0display_irArD\0"
+    "display_irArG\0update"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +75,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,19 +83,24 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x08 /* Private */,
-       3,    0,   80,    2, 0x08 /* Private */,
-       4,    0,   81,    2, 0x08 /* Private */,
-       5,    0,   82,    2, 0x08 /* Private */,
-       6,    0,   83,    2, 0x08 /* Private */,
-       7,    0,   84,    2, 0x08 /* Private */,
-       8,    1,   85,    2, 0x08 /* Private */,
-      10,    1,   88,    2, 0x08 /* Private */,
-      12,    0,   91,    2, 0x08 /* Private */,
-      13,    0,   92,    2, 0x08 /* Private */,
-      14,    0,   93,    2, 0x08 /* Private */,
-      15,    0,   94,    2, 0x08 /* Private */,
-      16,    0,   95,    2, 0x08 /* Private */,
+       1,    0,  104,    2, 0x08 /* Private */,
+       3,    0,  105,    2, 0x08 /* Private */,
+       4,    0,  106,    2, 0x08 /* Private */,
+       5,    0,  107,    2, 0x08 /* Private */,
+       6,    0,  108,    2, 0x08 /* Private */,
+       7,    0,  109,    2, 0x08 /* Private */,
+       8,    1,  110,    2, 0x08 /* Private */,
+      10,    1,  113,    2, 0x08 /* Private */,
+      12,    0,  116,    2, 0x08 /* Private */,
+      13,    0,  117,    2, 0x08 /* Private */,
+      14,    0,  118,    2, 0x08 /* Private */,
+      15,    0,  119,    2, 0x08 /* Private */,
+      16,    0,  120,    2, 0x08 /* Private */,
+      17,    0,  121,    2, 0x08 /* Private */,
+      18,    0,  122,    2, 0x08 /* Private */,
+      19,    0,  123,    2, 0x08 /* Private */,
+      20,    0,  124,    2, 0x08 /* Private */,
+      21,    0,  125,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -99,6 +111,11 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -126,7 +143,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->on_bt_bas_cam_clicked(); break;
         case 10: _t->on_bt_gauche_cam_clicked(); break;
         case 11: _t->on_bt_droite_cam_clicked(); break;
-        case 12: _t->update(); break;
+        case 12: _t->on_lcdNumber_overflow(); break;
+        case 13: _t->display_irAvD(); break;
+        case 14: _t->display_irAvG(); break;
+        case 15: _t->display_irArD(); break;
+        case 16: _t->display_irArG(); break;
+        case 17: _t->update(); break;
         default: ;
         }
     }
@@ -161,13 +183,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 18;
     }
     return _id;
 }

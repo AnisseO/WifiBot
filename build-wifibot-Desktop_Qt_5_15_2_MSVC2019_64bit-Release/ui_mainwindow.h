@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
@@ -39,6 +40,10 @@ public:
     QPushButton *bt_bas_cam;
     QPushButton *bt_droite_cam;
     QPushButton *bt_gauche_cam;
+    QLCDNumber *irAvG;
+    QLCDNumber *irArG;
+    QLCDNumber *irAvD;
+    QLCDNumber *irArD;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -192,17 +197,17 @@ public:
         Batterie->setValue(24);
         QCAM = new QWebEngineView(centralwidget);
         QCAM->setObjectName(QString::fromUtf8("QCAM"));
-        QCAM->setGeometry(QRect(780, 120, 451, 271));
+        QCAM->setGeometry(QRect(780, 170, 451, 271));
         horizontalSlider = new QSlider(centralwidget);
         horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
         horizontalSlider->setGeometry(QRect(180, 360, 481, 71));
-        horizontalSlider->setMinimum(0);
+        horizontalSlider->setMinimum(120);
         horizontalSlider->setMaximum(240);
         horizontalSlider->setValue(150);
         horizontalSlider->setOrientation(Qt::Horizontal);
         bt_haut_cam = new QPushButton(centralwidget);
         bt_haut_cam->setObjectName(QString::fromUtf8("bt_haut_cam"));
-        bt_haut_cam->setGeometry(QRect(940, 420, 141, 141));
+        bt_haut_cam->setGeometry(QRect(930, 470, 141, 121));
         QFont font2;
         font2.setPointSize(26);
         bt_haut_cam->setFont(font2);
@@ -215,7 +220,7 @@ public:
 "}"));
         bt_bas_cam = new QPushButton(centralwidget);
         bt_bas_cam->setObjectName(QString::fromUtf8("bt_bas_cam"));
-        bt_bas_cam->setGeometry(QRect(940, 570, 141, 111));
+        bt_bas_cam->setGeometry(QRect(930, 600, 141, 91));
         QFont font3;
         font3.setPointSize(16);
         bt_bas_cam->setFont(font3);
@@ -228,7 +233,7 @@ public:
 "}"));
         bt_droite_cam = new QPushButton(centralwidget);
         bt_droite_cam->setObjectName(QString::fromUtf8("bt_droite_cam"));
-        bt_droite_cam->setGeometry(QRect(1100, 500, 151, 111));
+        bt_droite_cam->setGeometry(QRect(1090, 530, 141, 111));
         QFont font4;
         font4.setPointSize(20);
         bt_droite_cam->setFont(font4);
@@ -241,7 +246,7 @@ public:
 "}"));
         bt_gauche_cam = new QPushButton(centralwidget);
         bt_gauche_cam->setObjectName(QString::fromUtf8("bt_gauche_cam"));
-        bt_gauche_cam->setGeometry(QRect(770, 490, 151, 121));
+        bt_gauche_cam->setGeometry(QRect(770, 520, 141, 121));
         bt_gauche_cam->setFont(font4);
         bt_gauche_cam->setStyleSheet(QString::fromUtf8("#bt_gauche_cam{\n"
 "background-color: transparent;\n"
@@ -250,6 +255,18 @@ public:
 "border: none;\n"
 "background-repeat: none;\n"
 "}"));
+        irAvG = new QLCDNumber(centralwidget);
+        irAvG->setObjectName(QString::fromUtf8("irAvG"));
+        irAvG->setGeometry(QRect(810, 20, 91, 31));
+        irArG = new QLCDNumber(centralwidget);
+        irArG->setObjectName(QString::fromUtf8("irArG"));
+        irArG->setGeometry(QRect(810, 80, 91, 31));
+        irAvD = new QLCDNumber(centralwidget);
+        irAvD->setObjectName(QString::fromUtf8("irAvD"));
+        irAvD->setGeometry(QRect(960, 20, 91, 31));
+        irArD = new QLCDNumber(centralwidget);
+        irArD->setObjectName(QString::fromUtf8("irArD"));
+        irArD->setGeometry(QRect(960, 80, 91, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
