@@ -11,7 +11,7 @@
         <file>gauche_b.png</file>
         <file>haut_bl.png</file>
         <file>stop_press.png</file>
-        <file>off.png</file>
         <file>on.png</file>
+        <file>off.png</file>
     </qresource>
 </RCC>

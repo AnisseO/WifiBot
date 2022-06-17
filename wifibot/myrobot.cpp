@@ -17,7 +17,7 @@ MyRobot::MyRobot(QObject *parent) : QObject(parent) {
     // setup signal and slot
     connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); //Send data to wifibot timer
 
-    _vitesse = 150;
+    _vitesse = 120;
 }
 
 
@@ -60,7 +60,6 @@ void MyRobot::readyRead() {
     qDebug() << "reading..."; // read the data from the socket
     DataReceived = socket->readAll();
     emit updateUI(DataReceived);
-    qDebug() << DataReceived[0] << DataReceived[1] << DataReceived[2];
 }
 
 void MyRobot::MyTimerSlot() {
@@ -141,7 +140,7 @@ unsigned int Parity= 0;
  Polynome = 0xA001;
 for ( CptOctet= 1 ; CptOctet < Taille_max ; CptOctet++)
  {
- Crc ^= Adresse_tab [CptOctet] ;
+ Crc ^= unsigned char(Adresse_tab [CptOctet]) ;
  for ( CptBit = 0; CptBit <= 7 ; CptBit++)
  {
  Parity= Crc;
@@ -169,8 +168,7 @@ return(Crc);
 
  int MyRobot::getBatterie()
  {
-     readyRead();
-     unsigned int batterie = DataReceived[2];
+     unsigned char batterie = DataReceived[2];
      return batterie;
  }
 

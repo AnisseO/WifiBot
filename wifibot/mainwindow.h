@@ -23,7 +23,6 @@ public:
 
 private slots:
     void on_bt_connect_clicked();
-    void on_bt_disconnect_clicked();
 
     void on_bt_haut_clicked();
     void on_bt_bas_clicked();
@@ -43,6 +42,8 @@ private slots:
     void on_bt_gauche_cam_clicked();
 
     void on_bt_droite_cam_clicked();
+    void update();
+    unsigned char batLevel;
 
 private:
     Ui::MainWindow *ui;

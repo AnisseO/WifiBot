@@ -52,11 +52,13 @@ OBJECTS_DIR   = release
 
 SOURCES       = ..\wifibot\main.cpp \
 		..\wifibot\mainwindow.cpp \
-		..\wifibot\myrobot.cpp release\moc_mainwindow.cpp \
+		..\wifibot\myrobot.cpp release\qrc_rsrc.cpp \
+		release\moc_mainwindow.cpp \
 		release\moc_myrobot.cpp
 OBJECTS       = release\main.obj \
 		release\mainwindow.obj \
 		release\myrobot.obj \
+		release\qrc_rsrc.obj \
 		release\moc_mainwindow.obj \
 		release\moc_myrobot.obj
 
@@ -140,7 +142,7 @@ all: Makefile.Release  release\wifibot.exe
 
 release\wifibot.exe: C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgets.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCore.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quick.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupport.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgets.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Gui.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModels.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChannel.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qml.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Network.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioning.lib C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.lib C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.lib ui_mainwindow.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-release\main.obj release\mainwindow.obj release\myrobot.obj release\moc_mainwindow.obj release\moc_myrobot.obj
+release\main.obj release\mainwindow.obj release\myrobot.obj release\qrc_rsrc.obj release\moc_mainwindow.obj release\moc_myrobot.obj
 $(LIBS)
 <<
 
@@ -150,10 +152,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) wifibot.zip $(SOURCES) $(DIST) ..\wifibot\wifibot.pro C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\spec_pre.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\angle.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\windows-desktop.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\windows-vulkan.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\msvc-desktop.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\qconfig.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_core.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_designer.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gui.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_help.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_location.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_network.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qml.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quick.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sql.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_svg.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webview.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xml.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt_functions.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt_config.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\win32-msvc\qmake.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exclusive_builds.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\msvc-version.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\toolchain.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\default_pre.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\default_pre.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resolve_config.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exclusive_builds_post.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\default_post.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\build_pass.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources_functions.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qtquickcompiler.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\precompile_header.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\warn_on.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\moc.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\opengl.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\uic.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qmake_use.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\file_copies.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\windows.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\testcase_targets.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exceptions.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\yacc.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\lex.prf ..\wifibot\wifibot.pro C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgets.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCore.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quick.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupport.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgets.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Gui.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModels.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChannel.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qml.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Network.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioning.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.prl C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.prl      C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\data\dummy.cpp ..\wifibot\mainwindow.h ..\wifibot\myrobot.h  ..\wifibot\main.cpp ..\wifibot\mainwindow.cpp ..\wifibot\myrobot.cpp ..\wifibot\mainwindow.ui    
+	$(ZIP) wifibot.zip $(SOURCES) $(DIST) ..\wifibot\wifibot.pro C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\spec_pre.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\angle.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\windows-desktop.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\windows-vulkan.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\msvc-desktop.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\qconfig.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_core.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_designer.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gui.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_help.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_location.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_network.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qml.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quick.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sql.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_svg.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webview.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xml.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt_functions.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt_config.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\win32-msvc\qmake.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exclusive_builds.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\common\msvc-version.conf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\toolchain.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\default_pre.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\default_pre.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resolve_config.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exclusive_builds_post.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\default_post.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\build_pass.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources_functions.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qtquickcompiler.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\precompile_header.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\warn_on.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qt.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\resources.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\moc.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\opengl.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\uic.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\qmake_use.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\file_copies.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\win32\windows.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\testcase_targets.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\exceptions.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\yacc.prf C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\lex.prf ..\wifibot\wifibot.pro ..\wifibot\rsrc.qrc C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineWidgets.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebEngineCore.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Quick.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5PrintSupport.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Widgets.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Gui.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5QmlModels.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5WebChannel.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Qml.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Network.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Positioning.prl C:\Qt2\5.15.2\msvc2019_64\lib\Qt5Core.prl C:\Qt2\5.15.2\msvc2019_64\lib\qtmain.prl     ..\wifibot\rsrc.qrc C:\Qt2\5.15.2\msvc2019_64\mkspecs\features\data\dummy.cpp ..\wifibot\mainwindow.h ..\wifibot\myrobot.h  ..\wifibot\main.cpp ..\wifibot\mainwindow.cpp ..\wifibot\myrobot.cpp ..\wifibot\mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\myrobot.obj release\moc_mainwindow.obj release\moc_myrobot.obj
+	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\myrobot.obj release\qrc_rsrc.obj release\moc_mainwindow.obj release\moc_myrobot.obj
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -175,8 +177,26 @@ compiler_qmlcache_loader_clean:
 	-$(DEL_FILE) release\qmlcache_loader.cpp
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
-compiler_rcc_make_all:
+compiler_rcc_make_all: release\qrc_rsrc.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) release\qrc_rsrc.cpp
+release\qrc_rsrc.cpp: ..\wifibot\rsrc.qrc \
+		C:\Qt2\5.15.2\msvc2019_64\bin\rcc.exe \
+		..\wifibot\stop.png \
+		..\wifibot\haut.png \
+		..\wifibot\bas_b.png \
+		..\wifibot\droite_b.png \
+		..\wifibot\gauche_b.png \
+		..\wifibot\haut_bl.png \
+		..\wifibot\on.png \
+		..\wifibot\gauche.png \
+		..\wifibot\off.png \
+		..\wifibot\droite.png \
+		..\wifibot\fond.jpg \
+		..\wifibot\bas.png \
+		..\wifibot\stop_press.png
+	C:\Qt2\5.15.2\msvc2019_64\bin\rcc.exe -name rsrc ..\wifibot\rsrc.qrc -o release\qrc_rsrc.cpp
+
 compiler_moc_predefs_make_all: release\moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) release\moc_predefs.h
@@ -294,13 +314,34 @@ release\moc_mainwindow.cpp: ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qcursor.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qicon.h \
-		..\wifibot\myrobot.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QNetworkAccessManager \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qnetworkaccessmanager.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QSharedDataPointer \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QString \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QUrl \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVariant \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVector \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QSslConfiguration \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslconfiguration.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslerror.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslcertificate.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qcryptographichash.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qdatetime.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qssl.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QFlags \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QSslPreSharedKeyAuthenticator \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslpresharedkeyauthenticator.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMetaType \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QNetworkRequest \
+		..\wifibot\myrobot.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QAbstractSocket \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QDebug \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QTimer \
@@ -410,7 +451,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 
 
@@ -524,13 +565,34 @@ release\main.obj: ..\wifibot\main.cpp ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qcursor.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qicon.h \
-		..\wifibot\myrobot.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QNetworkAccessManager \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qnetworkaccessmanager.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QSharedDataPointer \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QString \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QUrl \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVariant \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVector \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QSslConfiguration \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslconfiguration.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslerror.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslcertificate.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qcryptographichash.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qdatetime.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qssl.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QFlags \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QSslPreSharedKeyAuthenticator \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslpresharedkeyauthenticator.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMetaType \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QNetworkRequest \
+		..\wifibot\myrobot.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QAbstractSocket \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QDebug \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QTimer \
@@ -653,13 +715,34 @@ release\mainwindow.obj: ..\wifibot\mainwindow.cpp ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qcursor.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qicon.h \
-		..\wifibot\myrobot.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QNetworkAccessManager \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qnetworkaccessmanager.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QSharedDataPointer \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QString \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QUrl \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVariant \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVector \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QSslConfiguration \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslconfiguration.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qtcpsocket.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qabstractsocket.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslerror.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslcertificate.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qcryptographichash.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qdatetime.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qssl.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QFlags \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QSslPreSharedKeyAuthenticator \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\qsslpresharedkeyauthenticator.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMetaType \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QNetworkRequest \
+		..\wifibot\myrobot.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QTcpSocket \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtNetwork\QAbstractSocket \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QDebug \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QTimer \
@@ -667,7 +750,6 @@ release\mainwindow.obj: ..\wifibot\mainwindow.cpp ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qbasictimer.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMutex \
 		ui_mainwindow.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QVariant \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QApplication \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qapplication.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qcoreapplication.h \
@@ -686,9 +768,29 @@ release\mainwindow.obj: ..\wifibot\mainwindow.cpp ..\wifibot\mainwindow.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QPushButton \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qpushbutton.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qabstractbutton.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QSlider \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qslider.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qabstractslider.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QStatusBar \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QWidget
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QWidget \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineWidgets\QWebEngineView \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineWidgets\qwebengineview.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qpainter.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qtextoption.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qpen.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineWidgets\qtwebenginewidgetsglobal.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineWidgets\qwebenginepage.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineWidgets\qwebengineclientcertificateselection.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineWidgets\qwebenginedownloaditem.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineCore\qwebenginecallback.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineCore\qtwebenginecoreglobal.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineCore\qtwebenginecore-config.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWebEngineCore\qwebenginehttprequest.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qpagelayout.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtGui\qpagesize.h \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\QLabel \
+		C:\Qt2\5.15.2\msvc2019_64\include\QtWidgets\qlabel.h
 
 release\myrobot.obj: ..\wifibot\myrobot.cpp ..\wifibot\myrobot.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QObject \
@@ -767,6 +869,8 @@ release\myrobot.obj: ..\wifibot\myrobot.cpp ..\wifibot\myrobot.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qtimer.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\qbasictimer.h \
 		C:\Qt2\5.15.2\msvc2019_64\include\QtCore\QMutex
+
+release\qrc_rsrc.obj: release\qrc_rsrc.cpp 
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

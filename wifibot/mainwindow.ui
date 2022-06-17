@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="bt_connect">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>570</y>
+      <x>280</x>
+      <y>580</y>
       <width>241</width>
       <height>151</height>
      </rect>
@@ -31,36 +31,14 @@
     <property name="styleSheet">
      <string notr="true">#bt_connect{
 background-color: transparent;
-border-image: url(:on.png);
+border-image: url(:off.png);
 background: none;
 border: none;
 background-repeat: none;
-}
-
-#bt_connect:pressed{
-border-image: url(:off.png);
 }</string>
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="bt_disconnect">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>620</y>
-      <width>181</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Deconnexion</string>
     </property>
    </widget>
    <widget class="QPushButton" name="bt_left">
@@ -396,7 +374,7 @@ background-repeat: none;
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>430</y>
+      <y>450</y>
       <width>181</width>
       <height>121</height>
      </rect>
