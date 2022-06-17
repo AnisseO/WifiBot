@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     QWebEngineView *page = ui->QCAM; //Création d'un stream sur l'app
     page->load(QUrl("http://192.168.1.106:8080/?action=stream")); //Récupération des images de la caméra du robot
     manager = new QNetworkAccessManager(); //Création d'un manager
