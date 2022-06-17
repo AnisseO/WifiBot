@@ -54,6 +54,7 @@ public:
     QLabel *label_5;
     QLabel *label_6;
     QLabel *label_7;
+    QLCDNumber *lcdNumber;
     QMenuBar *menubar;
     QMenu *menuWifiBot;
     QMenu *menuCamera;
@@ -205,7 +206,7 @@ public:
 "}"));
         Batterie = new QProgressBar(centralwidget);
         Batterie->setObjectName(QString::fromUtf8("Batterie"));
-        Batterie->setGeometry(QRect(1150, 60, 118, 23));
+        Batterie->setGeometry(QRect(1140, 20, 118, 23));
         Batterie->setValue(24);
         QCAM = new QWebEngineView(centralwidget);
         QCAM->setObjectName(QString::fromUtf8("QCAM"));
@@ -297,7 +298,7 @@ public:
         label_3->setFont(font5);
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(1020, 70, 71, 51));
+        label_4->setGeometry(QRect(1020, 80, 71, 51));
         label_4->setFont(font5);
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
@@ -309,8 +310,11 @@ public:
         label_6->setFont(font5);
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(200, 10, 441, 51));
+        label_7->setGeometry(QRect(190, 0, 441, 51));
         label_7->setFont(font5);
+        lcdNumber = new QLCDNumber(centralwidget);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setGeometry(QRect(20, 540, 121, 51));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

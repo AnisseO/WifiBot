@@ -21,8 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
     TimerReceiveIR->start(1000);
 
     refresh = new QTimer(this);
-    connect(refresh, &QTimer::timeout, this, &MainWindow::afficherBat);
+    connect(refresh, &QTimer::timeout, this, &MainWindow::afficherBat);//Connexion du timer avec la batterie
     refresh->start(1000);
+
+
 }
 
 //Destructeur
@@ -188,7 +190,7 @@ void MainWindow::on_bt_droite_cam_clicked()
 //Affiche la vitesse
 void MainWindow::on_lcdNumber_overflow()
 {
-  //ui->value->display(robot.showvitesse());
+    ui->lcdNumber->display(robot.getVitesse());
 }
 
 //Affiche donnée infrarouge du capteur avant droit

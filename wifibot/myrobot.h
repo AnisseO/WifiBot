@@ -18,6 +18,8 @@ public:
     QByteArray DataReceived;
     QMutex Mutex;
     unsigned int _vitesse;
+    unsigned long tics_dr_prec=0;
+    unsigned long tics_g_prec =0;
 
 signals:
     void updateUI(const QByteArray Data);
@@ -41,6 +43,7 @@ public slots:
     int get_irAvG();
     int get_irArG();
     void stopIR();
+    double getVitesse();
     short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max) ;
 
 private:

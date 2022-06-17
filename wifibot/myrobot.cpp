@@ -185,7 +185,7 @@ return(Crc);
  int MyRobot::getBatterie(){
      unsigned char batterie;
      batterie=DataReceived[2];
-     batterie=1.754*batterie-221;
+     batterie=1.754*batterie-221; //126-183
      return batterie;
  }
 
@@ -226,5 +226,26 @@ return(Crc);
     if(ir0 && ir1 || ir2 < 100){
         Stop();
     }
+ }
+
+ double MyRobot::getVitesse(){
+     unsigned long ticdr , ticg ;
+     ticdr = ((((long)DataReceived[8]<<24))+(((long)DataReceived[7]<<16))+(((long)DataReceived[6]<<8))+((long)DataReceived[5]));
+     ticg = ((((long)DataReceived[16]<<24))+(((long)DataReceived[15]<<16))+(((long)DataReceived[14]<<8))+((long)DataReceived[13]));
+
+     unsigned long diff1 = ticdr - tics_dr_prec ;
+     tics_dr_prec = ticdr ;
+
+     unsigned long diff2 = ticg - tics_g_prec ;
+     tics_g_prec = ticg ;
+
+     double dist1 = (diff1/2448) *2*3.14*6.75*0.01 ;
+     double dist2 = (diff2/2448)*2*3.14*6.75*0.01 ;
+     double vitdr = dist1/0.075;
+     double vitg = dist2/0.075;
+     double vit = (vitdr+vitg)/2;
+     qDebug()<< "La vitesse est" << vit;
+     return vit ;
+
  }
 
