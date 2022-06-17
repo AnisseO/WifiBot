@@ -19,10 +19,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(TimerReceiveIR , &QTimer::timeout,this, &MainWindow::display_irArD);//Connexion du timer avec le capteur IR arrière droit
     connect(TimerReceiveIR , &QTimer::timeout,this, &MainWindow::display_irArG);//Connexion du timer avec le capteur IR arrière gauche
     TimerReceiveIR->start(1000);
-    connect(&robot, SIGNAL(updateUI(QByteArray)), this, SLOT(update())); //Récupération des signals envoyés par le robot
 
     refresh = new QTimer(this);
-    refresh->setSingleShot(true);
+    connect(refresh, &QTimer::timeout, this, &MainWindow::afficherBat);
+    refresh->start(1000);
 }
 
 //Destructeur
@@ -126,10 +126,9 @@ void MainWindow::keyPressEvent(QKeyEvent *e){
 }
 
 //Affichage de la batterie du robot
-void MainWindow::on_Batterie_valueChanged(int value)
+void MainWindow::afficherBat()
 {
-    update();
-    value = batLevel;
+    int value = robot.getBatterie();
     ui->Batterie->setValue(value);
 }
 
@@ -218,7 +217,6 @@ void MainWindow::display_irArG(){
 
 //Méthode récupérant les données envoyées par le robot
 void MainWindow::update(){
-    batLevel = robot.getBatterie();
     robot.stopIR();
     refresh->start(1000);
 }

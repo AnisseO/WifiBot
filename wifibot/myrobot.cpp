@@ -69,6 +69,7 @@ void MyRobot::MyTimerSlot() {
     Mutex.unlock();
 }
 
+//Envoie données pour avancer
 void MyRobot::Avancer() {
         DataToSend[0] = 0xFF;
         DataToSend[1] = 0x07;
@@ -83,6 +84,7 @@ void MyRobot::Avancer() {
         DataToSend[8] = char(Crc>>8); // CRC
 }
 
+//Envoie données pour reculer
 void MyRobot::Reculer() {
 
     DataToSend[0] = 0xFF;
@@ -99,6 +101,7 @@ void MyRobot::Reculer() {
 
 }
 
+//Envoie données pour tourner à gauche
 void MyRobot::Gauche() {
 
     DataToSend[0] = 0xFF;
@@ -114,6 +117,7 @@ void MyRobot::Gauche() {
 
 }
 
+//Envoie données pour tourner à droite
 void MyRobot::Droite() {
 
     DataToSend[0] = 0xFF;
@@ -129,6 +133,7 @@ void MyRobot::Droite() {
 
 }
 
+//Méthode faisant le CRC des 7 premières données
  short MyRobot::Crc16(QByteArray Adresse_tab , int Taille_max)
 {
 unsigned int  Crc = 0xFFFF;
@@ -151,7 +156,7 @@ for ( CptOctet= 1 ; CptOctet < Taille_max ; CptOctet++)
 return(Crc);
 }
 
-
+ //Envoie données pour stopper toutes les roues
  void MyRobot::Stop(){
 
      DataToSend[0] = 0xFF;
@@ -166,44 +171,53 @@ return(Crc);
      DataToSend[8] = char(Crc>>8); // CRC
  }
 
- int MyRobot::getBatterie()
- {
-     unsigned char batterie = DataReceived[2];
-     return batterie;
- }
-
+ //Paramétrage de la vitesse
  void MyRobot::setVitesse(unsigned char vitesse){
      _vitesse = vitesse;
  }
 
+ //Retourne la vitesse actuelle
  int MyRobot::showvitesse(){
      return _vitesse ;
  }
 
+ //Retourne la batterie du robot
+ int MyRobot::getBatterie(){
+     unsigned char batterie;
+     batterie=DataReceived[2];
+     batterie=1.754*batterie-221;
+     return batterie;
+ }
+
+ //Récupère les données du capteur IR avant droit
  int MyRobot::get_irAvD(){
      unsigned char IR = DataReceived[11];
      int ir=(int)IR;
      return ir;
  }
 
+ //Récupère les données du capteur IR arrière gauche
  int MyRobot::get_irArG(){
      unsigned char IR = DataReceived[12];
      int ir =(int)IR;
      return ir;
  }
 
+ //Récupère les données du capteur IR arrière droit
  int MyRobot::get_irArD(){
      unsigned char IR = DataReceived[4];
      int ir=(int)IR;
      return ir;
  }
 
+ //Récupère les données du capteur IR avant gauche
  int MyRobot::get_irAvG(){
      unsigned char IR = DataReceived[3];
      int ir=(int)IR;
      return ir;
  }
 
+ //Stop les roues du robot à l'approche d'un obstacle proche
  void MyRobot::stopIR(){
     int ir0= get_irAvG();
     int ir1= get_irAvD();

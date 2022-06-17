@@ -309,7 +309,7 @@ public:
         label_6->setFont(font5);
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(200, 20, 441, 51));
+        label_7->setGeometry(QRect(200, 10, 441, 51));
         label_7->setFont(font5);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);

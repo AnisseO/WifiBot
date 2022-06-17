@@ -30,7 +30,6 @@ private slots:
     void on_bt_left_clicked();
     void on_stop_clicked();
 
-    void on_Batterie_valueChanged(int value);
     void on_horizontalSlider_sliderMoved(int position);
 
     void on_bt_haut_cam_clicked();
@@ -45,6 +44,7 @@ private slots:
     void display_irArD();
     void display_irArG();
 
+    void afficherBat();
     void update();
 
 private:
